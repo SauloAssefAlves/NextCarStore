@@ -28,6 +28,18 @@ const router = createBrowserRouter([
         path: "/dashboard/new",
         element: <CarRegistration />,
       },
+      {
+        path: "/estoque",
+        element: <Home />,
+      },
+      {
+        path: "/avaliacao",
+        element: <Home />,
+      },
+      {
+        path: "/contato",
+        element: <Home />,
+      },
     ],
   },
   {
