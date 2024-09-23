@@ -4,7 +4,7 @@ import icone from "../../assets/icone.png";
 import { FiUser, FiLogIn } from "react-icons/fi";
 import { usePath } from "../../hooks/usePath";
 export function Header() {
-  const signed = false;
+  const signed = true;
   const loadingAuth = false;
   const { isCurrentPage } = usePath();
 
@@ -12,14 +12,25 @@ export function Header() {
     <div className='w-full flex items-center justify-center sm:h-20 h-36 bg-white drop-shadow mb-4'>
       <header className='flex flex-col sm:flex-row w-full items-center justify-between max-w-7xl px-4 mx-auto'>
         <div className='flex w-full sm:w-auto items-center justify-center'>
-          {!loadingAuth && !signed && (
-            <span className='sm:hidden flex flex-1 items-end justify-end'></span>
-          )}
+          <span className='sm:hidden flex flex-1 items-end justify-end'></span>
+
           <Link to='/'>
             <img className='w-56' src={logotipo} />
           </Link>
+          {!loadingAuth && signed && (
+            <Link
+              to='/dashboard'
+              className='sm:hidden flex flex-1 items-end justify-end'>
+              <div className='border-2 rounded-full p-1 border-blue-900'>
+                <FiUser size={24} color='#000' />
+              </div>
+            </Link>
+          )}
+
           {!loadingAuth && !signed && (
-            <Link to='/login' className='sm:hidden flex flex-1 items-end justify-end'>
+            <Link
+              to='/login'
+              className='sm:hidden flex flex-1 items-end justify-end'>
               <div className=' border-2 rounded-full p-1 border-gray-900'>
                 <FiLogIn size={24} color='#000' />
               </div>
