@@ -33,7 +33,7 @@ export function Home() {
                 R$ 190.000
               </strong>
             </div>
-            <div className='w-full h-px bg-sky-200 my-2'></div>
+            <div className='w-full h-px bg-slate-200 my-2'></div>
             <div className='px-2 pb-2'>
               <span className='text-zinc-700'>Campo Grande - MS</span>
             </div>

@@ -37,7 +37,7 @@ export function Login() {
         </Link>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className='bg-white max-w-xl w-full rounded-lg'>
+          className='bg-white max-w-xl w-full rounded-lg p-4'>
           <div className='mb-3'>
             <Input
               type='email'
@@ -57,7 +57,11 @@ export function Login() {
             />
           </div>
 
-          <button>Acessar</button>
+          <button
+            type='submit'
+            className='bg-zinc-900 w-full rounded-md text-white h-10 font-medium'>
+            Acessar
+          </button>
         </form>
       </div>
     </Container>
