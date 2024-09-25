@@ -37,43 +37,43 @@ export function Header() {
             </Link>
           )}
         </div>
-        <div className='flex-1 flex  h-20 items-center justify-start sm:pl-8 '>
+        <div className='flex-1 flex  h-20 items-center justify-start sm:pl-8  '>
           <Link
             to='/'
-            className='flex flex-col h-full items-center justify-end'>
+            className='flex flex-col h-full items-center justify-end group'>
             <span className=' text-lg pt-5 font-medium p-4'>Home</span>
             <div
               className={`w-full h-px ${
                 isCurrentPage("/") && "bg-blue-500"
-              } text-end`}></div>
+              } text-end group-hover:bg-blue-500`}></div>
           </Link>
 
           <Link
             to='/estoque'
-            className='flex flex-col h-full items-center justify-end'>
+            className='flex flex-col h-full items-center justify-end group'>
             <span className=' text-lg pt-5 font-medium p-4'>Estoque</span>
             <div
               className={`w-full h-px ${
                 isCurrentPage("/estoque") && "bg-blue-500"
-              } text-end`}></div>
+              } text-end group-hover:bg-blue-500`}></div>
           </Link>
           <Link
             to='/avaliacao'
-            className='flex flex-col h-full items-center justify-end'>
+            className='flex flex-col h-full items-center justify-end group'>
             <span className=' text-lg pt-5 font-medium p-4'>Avalição</span>
             <div
               className={`w-full h-px ${
                 isCurrentPage("/avaliacao") && "bg-blue-500"
-              } text-end`}></div>
+              } text-end group-hover:bg-blue-500`}></div>
           </Link>
           <Link
             to='/contato'
-            className='flex flex-col h-full items-center justify-end'>
+            className='flex flex-col h-full items-center justify-end group'>
             <span className=' text-lg pt-5 font-medium p-4'>Contato</span>
             <div
               className={`w-full h-px ${
                 isCurrentPage("/contato") && "bg-blue-500"
-              } text-end`}></div>
+              } text-end group-hover:bg-blue-500`}></div>
           </Link>
         </div>
         {!loadingAuth && signed && (

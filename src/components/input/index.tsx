@@ -19,7 +19,7 @@ export function Input({
   return (
     <div>
       <input
-        className='w-full border-2 rounded-md h-11 px-2 outline-none'
+        className='w-full border-2 rounded-md h-11 px-2 outline-cyan-500 -outline-offset-2'
         placeholder={placeholder}
         type={type}
         {...register(name, rules)}
