@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import logotipo from "../../assets/logotipo.png";
-import icone from "../../assets/icone.png";
 import { FiUser, FiLogIn } from "react-icons/fi";
 import { usePath } from "../../hooks/usePath";
 export function Header() {
@@ -43,7 +42,7 @@ export function Header() {
             className='flex flex-col h-full items-center justify-end group'>
             <span className=' text-lg pt-5 font-medium p-4'>Home</span>
             <div
-              className={`w-full h-px ${
+              className={`w-full h-1 ${
                 isCurrentPage("/") && "bg-blue-500"
               } text-end group-hover:bg-blue-500`}></div>
           </Link>
@@ -53,7 +52,7 @@ export function Header() {
             className='flex flex-col h-full items-center justify-end group'>
             <span className=' text-lg pt-5 font-medium p-4'>Estoque</span>
             <div
-              className={`w-full h-px ${
+              className={`w-full h-1 ${
                 isCurrentPage("/estoque") && "bg-blue-500"
               } text-end group-hover:bg-blue-500`}></div>
           </Link>
@@ -62,7 +61,7 @@ export function Header() {
             className='flex flex-col h-full items-center justify-end group'>
             <span className=' text-lg pt-5 font-medium p-4'>Avalição</span>
             <div
-              className={`w-full h-px ${
+              className={`w-full h-1 ${
                 isCurrentPage("/avaliacao") && "bg-blue-500"
               } text-end group-hover:bg-blue-500`}></div>
           </Link>
@@ -71,7 +70,7 @@ export function Header() {
             className='flex flex-col h-full items-center justify-end group'>
             <span className=' text-lg pt-5 font-medium p-4'>Contato</span>
             <div
-              className={`w-full h-px ${
+              className={`w-full h-1 ${
                 isCurrentPage("/contato") && "bg-blue-500"
               } text-end group-hover:bg-blue-500`}></div>
           </Link>

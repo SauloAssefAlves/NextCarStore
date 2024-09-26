@@ -42,7 +42,7 @@ export function Login() {
             <Input
               type='email'
               placeholder='Digite seu email...'
-              name="email"
+              name='email'
               error={errors.email?.message}
               register={register}
             />
@@ -63,6 +63,8 @@ export function Login() {
             Acessar
           </button>
         </form>
+
+        <Link to='/register'>Ainda não possui uma conta? Cadaste-se!</Link>
       </div>
     </Container>
   );

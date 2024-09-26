@@ -13,11 +13,8 @@ export function Home() {
             Buscar
           </button>
         </section>
-        <h1 className='font-bold text-center mt-6 text-2xl mb-4'>
-          Carros novos e usados em todo o Brasil
-        </h1>
 
-        <main className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+        <main className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 pt-6'>
           <section className='w-full bg-white rounded-lg'>
             <img
               className='w-full rounded-lg mb-2 max-h-72 hover:scale-105 transition-all'
