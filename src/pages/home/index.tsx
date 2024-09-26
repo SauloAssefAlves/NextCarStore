@@ -4,12 +4,12 @@ export function Home() {
   return (
     <>
       <Container>
-        <section className='bg-white p-4 rounded-lg max-w-3xl mx-auto flex justify-center items-center gap-2'>
+        <section className='bg-white p-4 rounded-md max-w-3xl mx-auto flex justify-center items-center gap-2'>
           <input
-            className='w-full border-2 rounded-lg h-9 px-3 outline-none'
+            className='w-full border-2 rounded-md h-9 px-3 outline-none'
             placeholder='Digite o nome do carro...'
           />
-          <button className='bg-blue-500 h-9 px-8 rounded-lg text-white font-semibold text-lg'>
+          <button className='bg-blue-500 h-9 px-8 rounded-md text-white font-semibold text-lg'>
             Buscar
           </button>
         </section>
