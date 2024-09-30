@@ -5,7 +5,6 @@ import { Input } from "../../components/input";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 const schema = z.object({
   name: z.string().min(1, "O campo nome é obrigatório"),
   email: z
@@ -14,9 +13,7 @@ const schema = z.object({
     .min(1, "O campo de email obrigatório"),
   password: z.string().min(6, "A senha deve ter no mínimo 6 caracteres"),
 });
-
 type FormData = z.infer<typeof schema>;
-
 export function Register() {
   const {
     register,
@@ -39,33 +36,29 @@ export function Register() {
         <form
           onSubmit={handleSubmit(onSubmit)}
           className='bg-white max-w-xl w-full rounded-lg p-4'>
-          <div className='mb-3'>
-            <Input
-              type='text'
-              placeholder='Digite seu nome completo...'
-              name='name'
-              error={errors.name?.message}
-              register={register}
-            />
-          </div>
-          <div className='mb-3'>
-            <Input
-              type='email'
-              placeholder='Digite seu email...'
-              name='email'
-              error={errors.email?.message}
-              register={register}
-            />
-          </div>
-          <div className='mb-3'>
-            <Input
-              type='password'
-              placeholder='Digite sua senha...'
-              name='password'
-              error={errors.password?.message}
-              register={register}
-            />
-          </div>
+          <Input
+            type='text'
+            placeholder='Digite seu nome completo...'
+            name='name'
+            error={errors.name?.message}
+            register={register}
+          />
+
+          <Input
+            type='email'
+            placeholder='Digite seu email...'
+            name='email'
+            error={errors.email?.message}
+            register={register}
+          />
+
+          <Input
+            type='password'
+            placeholder='Digite sua senha...'
+            name='password'
+            error={errors.password?.message}
+            register={register}
+          />
 
           <button
             type='submit'
@@ -73,7 +66,6 @@ export function Register() {
             Acessar
           </button>
         </form>
-
         <Link to='/login'>Já possui uma conta? Faça o login!</Link>
       </div>
     </Container>

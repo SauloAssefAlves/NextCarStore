@@ -13,11 +13,10 @@ export function Home() {
             Buscar
           </button>
         </section>
-
         <main className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 pt-6'>
           <section className='w-full bg-white rounded-lg'>
             <img
-              className='w-full rounded-lg mb-2 max-h-72 hover:scale-105 transition-all'
+              className='w-full rounded-lg mb-2 h-72 hover:scale-105 transition-all'
               src='https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202407/20240730/mercedesbenz-gle-450d-3-0-i6-mhev-diesel-coupe-4matic-9gtronic-wmimagem12411489317.webp?s=fill&w=552&h=414&q=60'
               alt='Carro'
             />
@@ -31,12 +30,10 @@ export function Home() {
               </strong>
             </div>
             <div className='w-full h-px bg-slate-200 my-2'></div>
-            <div className='px-2 pb-2'>
-              <span className='text-zinc-700'>Campo Grande - MS</span>
-            </div>
+            <span className='text-zinc-700 px-2 pb-2 block'>
+              Campo Grande - MS
+            </span>
           </section>
-    
-
         </main>
       </Container>
     </>

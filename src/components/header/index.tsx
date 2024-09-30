@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import logotipo from "../../assets/logotipo.png";
 import { FiUser, FiLogIn } from "react-icons/fi";
 import { usePath } from "../../hooks/usePath";
+import LinkHeader from "../LinkHeader";
+
 export function Header() {
   const signed = true;
   const loadingAuth = false;
@@ -14,7 +16,7 @@ export function Header() {
           <span className='sm:hidden flex flex-1 items-end justify-end'></span>
 
           <Link to='/'>
-            <img className='w-56' src={logotipo} />
+            <img className='w-56 h-20' src={logotipo} />
           </Link>
           {!loadingAuth && signed && (
             <Link
@@ -37,43 +39,8 @@ export function Header() {
           )}
         </div>
         <div className='flex-1 flex  h-20 items-center justify-start sm:pl-8  '>
-          <Link
-            to='/'
-            className='flex flex-col h-full items-center justify-end group'>
-            <span className=' text-lg pt-5 font-medium p-4'>Home</span>
-            <div
-              className={`w-full h-1 ${
-                isCurrentPage("/") && "bg-blue-500"
-              } text-end group-hover:bg-blue-500`}></div>
-          </Link>
-
-          <Link
-            to='/estoque'
-            className='flex flex-col h-full items-center justify-end group'>
-            <span className=' text-lg pt-5 font-medium p-4'>Estoque</span>
-            <div
-              className={`w-full h-1 ${
-                isCurrentPage("/estoque") && "bg-blue-500"
-              } text-end group-hover:bg-blue-500`}></div>
-          </Link>
-          <Link
-            to='/avaliacao'
-            className='flex flex-col h-full items-center justify-end group'>
-            <span className=' text-lg pt-5 font-medium p-4'>Avalição</span>
-            <div
-              className={`w-full h-1 ${
-                isCurrentPage("/avaliacao") && "bg-blue-500"
-              } text-end group-hover:bg-blue-500`}></div>
-          </Link>
-          <Link
-            to='/contato'
-            className='flex flex-col h-full items-center justify-end group'>
-            <span className=' text-lg pt-5 font-medium p-4'>Contato</span>
-            <div
-              className={`w-full h-1 ${
-                isCurrentPage("/contato") && "bg-blue-500"
-              } text-end group-hover:bg-blue-500`}></div>
-          </Link>
+          <LinkHeader to='/' label='Home' />
+          <LinkHeader to='/estoque' label='Estoque' />
         </div>
         {!loadingAuth && signed && (
           <Link to='/dashboard'>

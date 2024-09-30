@@ -17,7 +17,7 @@ export function Input({
   error,
 }: InputProps) {
   return (
-    <div>
+    <div className="mb-3">
       <input
         className='w-full border-2 rounded-md h-11 px-2 outline-cyan-500 -outline-offset-2'
         placeholder={placeholder}
