@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logotipo from "../../assets/logotipo.png";
 import { Container } from "../../components/container";
 import { Input } from "../../components/input";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { auth } from "../../services/firebaseConection";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+
 const schema = z.object({
   name: z.string().min(1, "O campo nome é obrigatório"),
   email: z
@@ -15,6 +18,7 @@ const schema = z.object({
 });
 type FormData = z.infer<typeof schema>;
 export function Register() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -25,7 +29,16 @@ export function Register() {
   });
 
   function onSubmit(data: FormData) {
-    console.log(data);
+    createUserWithEmailAndPassword(auth, data.email, data.password)
+      .then(async (user) => {
+        await updateProfile(user.user, { displayName: data.name });
+        console.log("Usuário criado com sucesso!");
+        navigate("/dashboard", { replace: true });
+      })
+      .catch((error) => {
+        console.log("Erro ao cadastrar usuário");
+        console.log(error);
+      });
   }
   return (
     <Container>
@@ -63,7 +76,7 @@ export function Register() {
           <button
             type='submit'
             className='bg-zinc-900 w-full rounded-md text-white h-10 font-medium'>
-            Acessar
+            Cadastrar
           </button>
         </form>
         <Link to='/login'>Já possui uma conta? Faça o login!</Link>

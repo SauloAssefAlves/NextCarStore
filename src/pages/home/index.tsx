@@ -1,6 +1,10 @@
 import { Container } from "../../components/container";
+import { useEffect } from "react";
+import axios from "axios";
 
 export function Home() {
+
+
   return (
     <>
       <Container>

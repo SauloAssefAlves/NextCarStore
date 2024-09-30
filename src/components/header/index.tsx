@@ -1,13 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import logotipo from "../../assets/logotipo.png";
 import { FiUser, FiLogIn } from "react-icons/fi";
-import { usePath } from "../../hooks/usePath";
 import LinkHeader from "../LinkHeader";
 
 export function Header() {
   const signed = true;
   const loadingAuth = false;
-  const { isCurrentPage } = usePath();
 
   return (
     <div className='w-full flex items-center justify-center sm:h-20 h-36 bg-white drop-shadow mb-4'>
